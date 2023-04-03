@@ -1,6 +1,44 @@
 import java.util.Scanner;
 
 public class MenuManager {
+	public static void addApparel() {
+		Scanner sc1 = new Scanner(System.in);
+		System.out.println("Add Apparel");
+		System.out.println("Apparel Code Form: Gender, Type, Number");
+		System.out.print("Apparel Code: ");
+		String gender = sc1.next();
+		String type = sc1.next();
+		int Code = sc1.nextInt();
+		System.out.println("Apparel Code: "+ gender + " "+ type + " "+ Code);
+		sc1.close();
+	}
+	
+	public static void editApparel() {
+		Scanner sc1 = new Scanner(System.in);
+		System.out.println("Edit Apparel");
+		System.out.println("Apparel Code Form: Gender, Type, Number");
+		System.out.print("Apparel Code: ");
+		
+		String gender = sc1.next();
+		String type = sc1.next();
+		int Code = sc1.nextInt();
+		System.out.println("Apparel Code: "+ gender + " "+ type + " "+ Code);
+		sc1.close();
+	}
+	public static void sizeOfApparel() {
+		Scanner sc1 = new Scanner(System.in);
+		System.out.println("Size of Apparel");
+		System.out.println("Apparel Code Form: Gender, Type, Number");
+		System.out.print("Apparel Code: ");
+		
+		String gender = sc1.next();
+		String type = sc1.next();
+		int Code = sc1.nextInt();
+		System.out.println("Apparel Code: "+ gender + " "+ type + " "+ Code);
+		sc1.close();
+	}
+	
+	
 	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in);
@@ -18,7 +56,7 @@ public class MenuManager {
 			num = sc.nextInt();
 			System.out.println(" ");
 			 
-			switch (num) {
+			 switch (num) {
 			case 1:	
 				System.out.println("1. Male section");
 				System.out.println("2. Female Seceion");
@@ -64,61 +102,17 @@ public class MenuManager {
 				}
 				break;
 			case 2:
-				System.out.println("1. Male section");
-				System.out.println("2. Female Seceion");
-				System.out.print("Select a number between 1-2: ");
-				int sectionNumber2 = sc.nextInt();
-				System.out.println(" ");
-				
-				if (num == 1) {
-					System.out.println("1. outer");
-					String maleOuterEdit = sc.next();
-					System.out.println("2. Top");
-					String maleTopEdit = sc.next();
-					System.out.println("3. Bottom");
-					String maleBottomEdit = sc.next();
-					System.out.println("4. Acc");
-					String maleAccEdit = sc.next();
-					System.out.print("Select a number between 1-4: ");
-					System.out.println(" ");
-					
-				}else if (num==2){
-					System.out.println("1. outer");
-					String femaleOuterEdit = sc.next();
-					System.out.println("2. Top");
-					String femaleTopEdit = sc.next();
-					System.out.println("3. Bottom");
-					String femaleBottomEdit = sc.next();
-					System.out.println("4. Acc");
-					String femaleAccEdit = sc.next();
-					System.out.print("Select a number between 1-4: ");
-					System.out.println(" ");
-			}
+				addApparel();
+				break;
 			case 3:
-				System.out.println("1. Male section");
-				System.out.println("2. Female Seceion");
-				System.out.print("Select a number between 1-2: ");
-				int sectionNumber3 = sc.nextInt();
-				System.out.println(" ");
+				editApparel();
+				break;
+			case 4:
+				sizeOfApparel();
+				break;
 				
-				if (num == 1) {
-					System.out.println("1. outer");
-					System.out.println("2. Top");
-					System.out.println("3. Bottom");
-					System.out.println("4. Acc");
-					System.out.print("Select a number between 1-4: ");
-					int editMaleApparel = sc.nextInt();
-					System.out.println(" ");
-					
-				}else if (num==2){
-					System.out.println("1. outer");
-					System.out.println("2. Top");
-					System.out.println("3. Bottom");
-					System.out.println("4. Acc");
-					System.out.print("Select a number between 1-4: ");
-					int editFemaleApparel = sc.nextInt();
-					System.out.println(" ");
 			}
+			 sc.close();
 		}
 	}
-}}
+}
