@@ -19,7 +19,7 @@ public class ApparelManager {
 			System.out.println("2 for Outer");
 			System.out.println("3 for Bottom");
 			System.out.println("4 for Acc");
-			System.out.println("Select number for Apparel kind");
+			System.out.print("Select number for Apparel kind: ");
 			kind = input.nextInt();
 			if(kind == 1) {
 				apparel = new Apparel(); //Top
@@ -34,28 +34,28 @@ public class ApparelManager {
 				break;
 			}
 			else {
-				System.out.println("Select number between 1-4");
+				System.out.print("Select number between 1-4: ");
 			}
 		}
 		System.out.print("Name: ");
 		String name = input.next();
 		
-		System.out.println("Gender: ");
+		System.out.print("Gender: ");
 		String gender = input.next();
 		//boolean static?
-		System.out.println("Type: ");
+		System.out.print("Type: ");
 		String type = input.next();
 		
-		System.out.println("Size: ");
+		System.out.print("Size: ");
 		String size = input.next();
 		
-		System.out.println("ProductNumber: ");
+		System.out.print("ProductNumber: ");
 		int productNum = input.nextInt();
 		
-		System.out.println("Location: ");
+		System.out.print("Location: ");
 		String location = input.next();
 		
-		System.out.println("Stock: ");
+		System.out.print("Stock: ");
 		int stock = input.nextInt();
 		
 		apparel = new Apparel(name, gender, type, size, productNum, location, stock);

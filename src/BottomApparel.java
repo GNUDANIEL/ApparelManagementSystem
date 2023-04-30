@@ -28,23 +28,23 @@ public class BottomApparel extends Apparel {
 					
 				}
 			}	 
-			System.out.println("Type: ");
+			System.out.print("Type: ");
 			String type = input.next();
 			this.setType(type);
 			
-			System.out.println("Size: ");
+			System.out.print("Size: ");
 			String size = input.next();
 			this.setSize(size);
 			
-			System.out.println("ProductNumber: ");
+			System.out.print("ProductNumber: ");
 			int productNum = input.nextInt();
 			this.setProductNumber(productNum);
 			
-			System.out.println("Location: ");
+			System.out.print("Location: ");
 			String location = input.next();
 			this.setLocation(location);
 			
-			System.out.println("Stock: ");
+			System.out.print("Stock: ");
 			int stock = input.nextInt();
 			this.setStock(stock);
 

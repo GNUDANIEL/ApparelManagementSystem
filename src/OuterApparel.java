@@ -10,7 +10,7 @@ public class OuterApparel extends Apparel {
 		
 		char answer = 'f';
 		while(answer !='y' && answer !='Y' && answer !='n' && answer !='Y') {
-			System.out.println("Is this Unisex apparel? (Y/N)");
+			System.out.print("Is this Unisex apparel? (Y/N): ");
 			
 			answer = input.next().charAt(0);
 			if (answer == 'y' ||answer ==  'Y') {
@@ -19,7 +19,7 @@ public class OuterApparel extends Apparel {
 				break;
 			}
 			else if (answer == 'n' ||answer ==  'N') {
-				System.out.println("Gender: ");
+				System.out.print("Gender: ");
 				gender = input.next();
 				this.setGender(gender);
 				break;
@@ -29,23 +29,23 @@ public class OuterApparel extends Apparel {
 			}
 		}
 		 
-		System.out.println("Type: ");
+		System.out.print("Type: ");
 		String type = input.next();
 		this.setType(type);
 		
-		System.out.println("Size: ");
+		System.out.print("Size: ");
 		String size = input.next();
 		this.setSize(size);
 		
-		System.out.println("ProductNumber: ");
+		System.out.print("ProductNumber: ");
 		int productNum = input.nextInt();
 		this.setProductNumber(productNum);
 		
-		System.out.println("Location: ");
+		System.out.print("Location: ");
 		String location = input.next();
 		this.setLocation(location);
 		
-		System.out.println("Stock: ");
+		System.out.print("Stock: ");
 		int stock = input.nextInt();
 		this.setStock(stock);
  }
