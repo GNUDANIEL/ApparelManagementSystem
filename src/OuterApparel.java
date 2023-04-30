@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class OuterApparel extends Apparel {
-// Apparel 상속받은 상의 Apparel\
+// Apparel 상속받은 상의 Apparel
 	
 	public void getUserInput(Scanner input) {
 	 	System.out.print("Name: ");

@@ -8,7 +8,7 @@ public class Apparel {
 	protected ApparelKind kind = ApparelKind.Top;
 	protected String name;//ex)windbreaker
 	protected String gender; // M FM UniSex
-	protected String type;
+	protected String type; //삭제 예정 의미없는 멤버변수
 	protected int productNumber ;
 	protected String location;
 	protected String size; //S,M,L
