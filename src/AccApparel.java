@@ -3,16 +3,36 @@ import java.util.Scanner;
 public class AccApparel extends Apparel {
 	// Apparel 상속받은 악세사리 Apparel
 	public void getUserInput(Scanner input) {
-	 	System.out.print("Name: ");
+		System.out.print("Name: ");
 		String name = input.next();
 		this.setName(name);
+					
+		System.out.print("Size: ");
+		String size = input.next();
+		this.setSize(size);
+		
+		System.out.print("ProductNumber: ");
+		int productNum = input.nextInt();
+		this.setProductNumber(productNum);
+		
+		System.out.print("Location: ");
+		String location = input.next();
+		this.setLocation(location);
+		
+		System.out.print("Stock: ");
+		int stock = input.nextInt();
+		this.setStock(stock);
+		
+		System.out.print("Color: ");
+		String color = input.next();
+		this.setColor(color);
 		
 		char answer = 'f';
 		while(answer !='y' && answer !='Y' && answer !='n' && answer !='Y') {
 			System.out.println("Is this Unisex apparel? (Y/N)");
 			
 			answer = input.next().charAt(0);
-			if (answer == 'y' ||answer ==  'Y') {
+			if (answer == 'y' || answer ==  'Y') {
 				gender = "Unisex";
 				this.setGender(gender);
 				break;
@@ -23,29 +43,18 @@ public class AccApparel extends Apparel {
 					this.setGender(gender);
 					break;
 				}
-				else {
-					
-				}
+				else {}
+			
 			}	 
-			System.out.println("Type: ");
-			String type = input.next();
-			this.setType(type);
-			
-			System.out.println("Size: ");
-			String size = input.next();
-			this.setSize(size);
-			
-			System.out.println("ProductNumber: ");
-			int productNum = input.nextInt();
-			this.setProductNumber(productNum);
-			
-			System.out.println("Location: ");
-			String location = input.next();
-			this.setLocation(location);
-			
-			System.out.println("Stock: ");
-			int stock = input.nextInt();
-			this.setStock(stock);
+		System.out.println("\n Check New Apparel Information: ");
+		System.out.println("name: "+ name);
+		System.out.println("Gender: " + gender);
+		System.out.println("Size: "+ size);
+		System.out.println("ProductNumber: " + productNum);
+		System.out.println("Location: " +location);
+		System.out.println("Stock: "+ stock);
+		System.out.println("Color: "+color);
+		System.out.println("\n Information is successfully registered \n");
 
 		}
 	}

@@ -5,6 +5,11 @@ public class ApparelManager {
 	ArrayList <Apparel> apparels = new ArrayList<Apparel>();
 	Scanner input ;
 	
+	public Apparel getNumFromList(int index) {
+		return apparels.get(index);
+	}
+	
+	ApparelManager(){}
 	ApparelManager(Scanner input){
 		this.input =input;
 	}
@@ -13,7 +18,7 @@ public class ApparelManager {
 		int kind = 0;
 		Apparel apparel ;
 		while (kind != 1 && kind != 2) {
-			System.out.println("Add Apparel");
+			System.out.println("Add Apparel"); //productNum 겹치는 경우 오류나는 경우
 		
 			System.out.println("1 for Top");
 			System.out.println("2 for Outer");
@@ -33,42 +38,22 @@ public class ApparelManager {
 				apparels.add(apparel);
 				break;
 			}
+			else if(kind == 3) {
+				apparel = new BottomApparel();
+				apparel.getUserInput(input);
+				apparels.add(apparel);
+				break;
+			}
+			else if(kind == 4) {
+				apparel = new AccApparel();
+				apparel.getUserInput(input);
+				apparels.add(apparel);
+				break;
+			}
 			else {
 				System.out.print("Select number between 1-4: ");
 			}
 		}
-		System.out.print("Name: ");
-		String name = input.next();
-		
-		System.out.print("Gender: ");
-		String gender = input.next();
-		//boolean static?
-		System.out.print("Type: ");
-		String type = input.next();
-		
-		System.out.print("Size: ");
-		String size = input.next();
-		
-		System.out.print("ProductNumber: ");
-		int productNum = input.nextInt();
-		
-		System.out.print("Location: ");
-		String location = input.next();
-		
-		System.out.print("Stock: ");
-		int stock = input.nextInt();
-		
-		apparel = new Apparel(name, gender, type, size, productNum, location, stock);
-		apparels.add(apparel);
-		
-		System.out.println("\n Check New Apparel Information: ");
-		System.out.println("name: "+ name);
-		System.out.println("Type " + type);
-		System.out.println("Gender " + gender);
-		System.out.println("ProductNumber: " + productNum);
-		System.out.println("Location: " +location);
-		
-		System.out.println("\n Information is successfully registered \n");
 	}
 	
 	public void editApparel() {
@@ -81,15 +66,15 @@ public class ApparelManager {
 				int num = -1;
 				while(num != 7) {
 				//옷 정보에 저장할 정보: 사이즈 종류 코드 
+				num = input.nextInt();
 				System.out.println("1. Edit Name"); 
 				System.out.println("2. Edit Gender");//입력한 옷 정보를 담을 스킬이 없어 생략 아마 상속 혹은 메소듣 이용할 것이라고 예상
-				System.out.println("3. Edit Type");//저장된 정보를 불러내어 수정하는 기술 필요
+				System.out.println("3. Edit Type");
 				System.out.println("4. Edit Size");
 				System.out.println("5. Edit ProductNumber");
 				System.out.println("6. Edit Location");
 				System.out.println("7. Edit Stock");
 				System.out.print("Select a number between 1-7: ");
-				num = input.nextInt();
 				System.out.println(" ");
 				 
 				 if (num==1){
@@ -101,22 +86,18 @@ public class ApparelManager {
 				 apparel.setGender(gender);
 				 }
 				 else if(num==3){
-				String type = input.next();
-				apparel.setType(type);
-				 }
-				 else if(num==4){
 				String size = input.next();
 				apparel.setSize(size);
 				 }
-				 else if(num==5){
+				 else if(num==4){
 				int productNumber = input.nextInt();
 				apparel.setProductNumber(productNumber);
 				 }
-				 else if(num==6){
+				 else if(num==5){
 				String location = input.next();
 				apparel.setLocation(location);
 				 }
-				 else if(num==7){
+				 else if(num==6){
 				int stock = input.nextInt();
 				apparel.setStock(stock);
 				 }
@@ -138,6 +119,7 @@ public class ApparelManager {
 		for(int i = 0; i < apparels.size();i++) {
 			if(apparels.get(i).productNumber == productNum) {
 				index = i;
+				System.out.println(" ");
 				break;
 			}
 		}

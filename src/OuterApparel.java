@@ -4,35 +4,11 @@ public class OuterApparel extends Apparel {
 // Apparel 상속받은 상의 Apparel
 	
 	public void getUserInput(Scanner input) {
-	 	System.out.print("Name: ");
+	 	
+		System.out.print("Name: ");
 		String name = input.next();
 		this.setName(name);
-		
-		char answer = 'f';
-		while(answer !='y' && answer !='Y' && answer !='n' && answer !='Y') {
-			System.out.print("Is this Unisex apparel? (Y/N): ");
-			
-			answer = input.next().charAt(0);
-			if (answer == 'y' ||answer ==  'Y') {
-				gender = "Unisex";
-				this.setGender(gender);
-				break;
-			}
-			else if (answer == 'n' ||answer ==  'N') {
-				System.out.print("Gender: ");
-				gender = input.next();
-				this.setGender(gender);
-				break;
-			}
-			else {
-				
-			}
-		}
-		 
-		System.out.print("Type: ");
-		String type = input.next();
-		this.setType(type);
-		
+					
 		System.out.print("Size: ");
 		String size = input.next();
 		this.setSize(size);
@@ -48,5 +24,38 @@ public class OuterApparel extends Apparel {
 		System.out.print("Stock: ");
 		int stock = input.nextInt();
 		this.setStock(stock);
+		
+		System.out.print("Color: ");
+		String color = input.next();
+		this.setColor(color);
+		
+		char answer = 'f';
+		while(answer !='y' && answer !='Y' && answer !='n' && answer !='N') {
+			System.out.print("Is this Unisex apparel? (Y/N): ");
+			
+			answer = input.next().charAt(0);
+			if (answer == 'y' ||answer ==  'Y') {
+				gender = "Unisex";
+				this.setGender(gender);
+				break;
+				}
+				else if (answer == 'n' ||answer ==  'N') {
+					System.out.print("Gender: ");
+					gender = input.next();
+					this.setGender(gender);
+					break;
+				}
+				else {}			
+		}
+		System.out.println("\n Check New Apparel Information: ");
+		System.out.println("name: "+ name);
+		System.out.println("Gender: " + gender);
+		System.out.println("Size: "+ size);
+		System.out.println("ProductNumber: " + productNum);
+		System.out.println("Location: " +location);
+		System.out.println("Stock: "+ stock);
+		System.out.println("Color: "+color);
+		
+		System.out.println("\n Information is successfully registered \n");
  }
 }
