@@ -6,10 +6,6 @@ public class AccApparel extends Apparel {
 		System.out.print("Name: ");
 		String name = input.next();
 		this.setName(name);
-					
-		System.out.print("Size: ");
-		String size = input.next();
-		this.setSize(size);
 		
 		System.out.print("ProductNumber: ");
 		int productNum = input.nextInt();
@@ -27,17 +23,36 @@ public class AccApparel extends Apparel {
 		String color = input.next();
 		this.setColor(color);
 		
-		char answer = 'f';
-		while(answer !='y' && answer !='Y' && answer !='n' && answer !='Y') {
-			System.out.println("Is this Unisex apparel? (Y/N)");
+		char answerSize = 'f';
+		while(answerSize !='y' && answerSize !='Y' && answerSize !='n' && answerSize !='Y') {
+			System.out.print("Is this Free size accessory? (Y/N): ");
 			
-			answer = input.next().charAt(0);
-			if (answer == 'y' || answer ==  'Y') {
+			answerSize = input.next().charAt(0);
+			if (answerSize == 'y' || answerSize ==  'Y') {
+				size = "Free size";
+				this.setSize(size);
+				break;
+				}
+				else if (answerSize == 'n' ||answerSize ==  'N') {
+					System.out.println("Size: ");
+					size = input.next();
+					this.setSize(size);
+					break;
+				}
+				else {}
+			}
+		
+		char answerGender = 'f';
+		while(answerGender !='y' && answerGender !='Y' && answerGender !='n' && answerGender !='Y') {
+			System.out.print("Is this Unisex apparel? (Y/N): ");
+			
+			answerGender = input.next().charAt(0);
+			if (answerGender == 'y' || answerGender ==  'Y') {
 				gender = "Unisex";
 				this.setGender(gender);
 				break;
 				}
-				else if (answer == 'n' ||answer ==  'N') {
+				else if (answerGender == 'n' ||answerGender ==  'N') {
 					System.out.println("Gender: ");
 					gender = input.next();
 					this.setGender(gender);
@@ -46,7 +61,7 @@ public class AccApparel extends Apparel {
 				else {}
 			
 			}	 
-		System.out.println("\n Check New Apparel Information: ");
+		System.out.println("\n --- Check New Apparel Information --- ");
 		System.out.println("name: "+ name);
 		System.out.println("Gender: " + gender);
 		System.out.println("Size: "+ size);

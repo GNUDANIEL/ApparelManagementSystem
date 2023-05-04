@@ -47,7 +47,7 @@ public class OuterApparel extends Apparel {
 				}
 				else {}			
 		}
-		System.out.println("\n Check New Apparel Information: ");
+		System.out.println("\n --- Check New Apparel Information ---  ");
 		System.out.println("name: "+ name);
 		System.out.println("Gender: " + gender);
 		System.out.println("Size: "+ size);

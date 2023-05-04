@@ -30,7 +30,7 @@ public class BottomApparel extends Apparel {
 
 		char answer = 'f';
 		while(answer !='y' && answer !='Y' && answer !='n' && answer !='Y') {
-			System.out.println("Is this Unisex apparel? (Y/N)");
+			System.out.print("Is this Unisex apparel? (Y/N): ");
 			
 			answer = input.next().charAt(0);
 			if (answer == 'y' || answer ==  'Y') {
@@ -46,7 +46,7 @@ public class BottomApparel extends Apparel {
 				}
 				else {}
 			}	 
-		System.out.println("\n Check New Apparel Information: ");
+		System.out.println("\n --- Check New Apparel Information ---");
 		System.out.println("name: "+ name);
 		System.out.println("Gender: " + gender);
 		System.out.println("Size: "+ size);
