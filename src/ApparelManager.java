@@ -46,7 +46,7 @@ public class ApparelManager {
 				break;
 			}
 			else if(kind == 4) {
-				apparel = new AccApparel(ApparelKind.Acc);
+				apparel = new AccApparel(ApparelKind.Top);
 				apparel.getUserInput(input);
 				apparels.add(apparel);
 				break;

@@ -13,17 +13,18 @@ public class Apparel {
 	protected String size; //S,M,L
 	protected int stock;
 	protected String color;
-
+	protected int price;
+	
 	public Apparel() {}; 
-	//public Apparel(ApparelKind) {};
+
 	public Apparel(String name, String gender, String size,String color) {//기본정보이므로 최초로 의류를 등록할 때 사용
 		 this.name = name;
 		 this.gender= gender;
 		 this.size = size;
 		 this.color = color;
-	 }
+	}
 	public Apparel(ApparelKind kind, String name, String gender, String size, int productNumber 
-			 		,String location, int stock,String color) {//location 과 productNumber, Stock 할당 이후 정보
+			 		,String location, int stock,String color,int price) {//location 과 productNumber, Stock 할당 이후 정보
 		 this.kind = kind;
 		 this.name = name;
 		 this.gender= gender;
@@ -32,75 +33,83 @@ public class Apparel {
 		 this.size = size;
 		 this.stock = stock;
 		 this.color = color;
+		 this.price = price;
 	 }
 	 
-	 public Apparel(ApparelKind kind) {
+	public Apparel(ApparelKind kind) {
 		this.kind = kind;
 	}
 	//Getter Setter 항상 생성자 아래위치
-	 public void setKind(ApparelKind kind) {
-			this.kind = kind;
-		}
+	public void setKind(ApparelKind kind) {
+		this.kind = kind;
+	}
 
-		public String getName() {
-			return name;
-		}
+	public String getName() {
+		return name;
+	}
 
-		public void setName(String name) {
-			this.name = name;
-		}
+	public void setName(String name) {
+	this.name = name;
+	}
 
-		public String getGender() {
-			return gender;
-		}
+	public String getGender() {
+		return gender;
+	}
 
-		public void setGender(String gender) {
-			this.gender = gender;
-		}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
 
-		public int getProductNumber() {
-			return productNumber;
-		}
+	public int getProductNumber() {
+		return productNumber;
+	}
 
-		public void setProductNumber(int productNumber) {
-			this.productNumber = productNumber;
-		}
+	public void setProductNumber(int productNumber) {
+		this.productNumber = productNumber;
+	}
 
-		public String getLocation() {
-			return location;
-		}
-
-		public void setLocation(String location) {
-			this.location = location;
-		}
-
-		public String getSize() {
-			return size;
-		}
-
-		public void setSize(String size) {
-			this.size = size;
-		}
-
-		public int getStock() {
-			return stock;
-		}
-
-		public void setStock(int stock) {
-			this.stock = stock;
-		}
-		 public String getColor() {
-			return color;
-			}
-
-		public void setColor(String color) {
-			this.color = color;
-			}
+	public String getLocation() {
+		return location;
+	}
 	
-	 public void printInfo() {	 
-		 String skind = "none"; 
-		 switch (this.kind) {
-		 case Top : 
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	public String getSize() {
+		return size;
+	}
+
+	public void setSize(String size) {
+		this.size = size;
+	}
+
+	public int getStock() {
+		return stock;
+	}
+	
+	public void setStock(int stock) {
+		this.stock = stock;
+	}
+	
+	public String getColor() {
+		return color;
+	}
+	
+	public void setColor(String color) {
+		this.color = color;
+	}
+	public int getPrice() {
+		return price;
+	}
+	public void setPrice(int price) {
+		this.price = price;
+	}
+	
+	public void printInfo() {	 
+		String skind = "none"; 
+		switch (this.kind) {
+		case Top : 
 			 skind = "Top";
 			 break;
 		 case Outer:
@@ -113,6 +122,8 @@ public class Apparel {
 			 skind = "Accessory";
 			 break;
 		 default:
+			 skind = "none";
+			 break;
 		 }
 		 System.out.println("kind: "+ skind);
 		 System.out.println("name: " + this.name);
@@ -122,6 +133,7 @@ public class Apparel {
 		 System.out.println("productNumber: " + this.productNumber );
 		 System.out.println("Stock: " + this.stock);
 		 System.out.println("Color: " + this.color);
+		 System.out.println("Price: " + this.price);
 	 }
 	 
 	 public void getUserInput(Scanner input) {
@@ -144,6 +156,10 @@ public class Apparel {
 			System.out.print("Color: ");
 			String color = input.next();
 			this.setColor(color);
+			
+			System.out.print("Price: ");
+			int price = input.nextInt();
+			this.setPrice(price);
 			
 			char answerSize = 'f';
 			while(answerSize !='y' && answerSize !='Y' && answerSize !='n' && answerSize !='Y') {
@@ -191,7 +207,7 @@ public class Apparel {
 			System.out.println("Location: " +location);
 			System.out.println("Stock: "+ stock);
 			System.out.println("Color: "+color);
-			
+			System.out.println("Price: "+price);
 			System.out.println("\n Information is successfully registered \n");
 	 }
 }

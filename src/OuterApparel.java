@@ -32,6 +32,10 @@ public class OuterApparel extends Apparel {
 		String color = input.next();
 		this.setColor(color);
 		
+		System.out.print("Price: ");
+		int price = input.nextInt();
+		this.setPrice(price);
+		
 		char answer = 'f';
 		while(answer !='y' && answer !='Y' && answer !='n' && answer !='N') {
 			System.out.print("Is this Unisex apparel? (Y/N): ");
@@ -58,6 +62,7 @@ public class OuterApparel extends Apparel {
 		System.out.println("Location: " +location);
 		System.out.println("Stock: "+ stock);
 		System.out.println("Color: "+color);
+		System.out.println("Price: "+price);
 		
 		System.out.println("\n Information is successfully registered \n");
  }
@@ -87,5 +92,6 @@ public class OuterApparel extends Apparel {
 		 System.out.println("productNumber: " + this.productNumber );
 		 System.out.println("Stock: " + this.stock);
 		 System.out.println("Color: " + this.color);
+		 System.out.println("Price: "+this.price);
 	 }
 }

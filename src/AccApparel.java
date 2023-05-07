@@ -29,6 +29,10 @@ public class AccApparel extends Apparel {
 		String color = input.next();
 		this.setColor(color);
 		
+		System.out.print("Price: ");
+		int price = input.nextInt();
+		this.setPrice(price);
+		
 		char answerSize = 'f';
 		while(answerSize !='y' && answerSize !='Y' && answerSize !='n' && answerSize !='Y') {
 			System.out.print("Is this Free size accessory? (Y/N): ");
@@ -55,7 +59,8 @@ public class AccApparel extends Apparel {
 		System.out.println("ProductNumber: " + productNum);
 		System.out.println("Location: " +location);
 		System.out.println("Stock: "+ stock);
-		System.out.println("Color: "+color);
+		System.out.println("Color: "+ color);
+		System.out.println("Price: "+ price);
 		System.out.println("\n Information is successfully registered \n");
 
 		}
@@ -85,6 +90,7 @@ public class AccApparel extends Apparel {
 		 System.out.println("productNumber: " + this.productNumber );
 		 System.out.println("Stock: " + this.stock);
 		 System.out.println("Color: " + this.color);
+		 System.out.println("Price: "+ this.price);
 	 }
 	}
 

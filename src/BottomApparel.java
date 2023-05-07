@@ -30,6 +30,10 @@ public class BottomApparel extends Apparel {
 		System.out.print("Color: ");
 		String color = input.next();
 		this.setColor(color);
+		
+		System.out.print("Price: ");
+		int price = input.nextInt();
+		this.setPrice(price);
 
 		char answer = 'f';
 		while(answer !='y' && answer !='Y' && answer !='n' && answer !='Y') {
@@ -57,6 +61,7 @@ public class BottomApparel extends Apparel {
 		System.out.println("Location: " +location);
 		System.out.println("Stock: "+ stock);
 		System.out.println("Color: "+color);
+		System.out.println("Price: " + price);
 		
 		System.out.println("\n Information is successfully registered \n");
 		}
