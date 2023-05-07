@@ -15,14 +15,16 @@ public class Apparel {
 	protected String color;
 
 	public Apparel() {}; 
+	//public Apparel(ApparelKind) {};
 	public Apparel(String name, String gender, String size,String color) {//기본정보이므로 최초로 의류를 등록할 때 사용
 		 this.name = name;
 		 this.gender= gender;
 		 this.size = size;
 		 this.color = color;
 	 }
-	public Apparel(String name, String gender, String size, int productNumber 
+	public Apparel(ApparelKind kind, String name, String gender, String size, int productNumber 
 			 		,String location, int stock,String color) {//location 과 productNumber, Stock 할당 이후 정보
+		 this.kind = kind;
 		 this.name = name;
 		 this.gender= gender;
 		 this.productNumber =productNumber; 
@@ -32,7 +34,10 @@ public class Apparel {
 		 this.color = color;
 	 }
 	 
-	 //Getter Setter 항상 생성자 아래위치
+	 public Apparel(ApparelKind kind) {
+		this.kind = kind;
+	}
+	//Getter Setter 항상 생성자 아래위치
 	 public void setKind(ApparelKind kind) {
 			this.kind = kind;
 		}
@@ -91,13 +96,25 @@ public class Apparel {
 		public void setColor(String color) {
 			this.color = color;
 			}
-	 
-	 public void printInfo() {
-//		 int i = input.nextInt();
-//		 ApparelManager apparelInfo = new ApparelManager();
-//		 Apparel info = apparelInfo.getNumFromList(i);
-//		 System.out.println(info);
-		 
+	
+	 public void printInfo() {	 
+		 String skind = "none"; 
+		 switch (this.kind) {
+		 case Top : 
+			 skind = "Top";
+			 break;
+		 case Outer:
+			 skind = "Outer";
+			 break;
+		 case Bottom:
+			 skind = "Bottom";
+			 break;
+		 case Acc:
+			 skind = "Accessory";
+			 break;
+		 default:
+		 }
+		 System.out.println("kind: "+ skind);
 		 System.out.println("name: " + this.name);
 		 System.out.println("size: " + this.size);
 		 System.out.println("gender: " + this.gender);
@@ -139,7 +156,7 @@ public class Apparel {
 					break;
 					}
 					else if (answerSize == 'n' ||answerSize ==  'N') {
-						System.out.println("Size: ");
+						System.out.print("Size: ");
 						size = input.next();
 						this.setSize(size);
 						break;

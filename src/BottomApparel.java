@@ -1,8 +1,11 @@
 import java.util.Scanner;
 
 public class BottomApparel extends Apparel {
-	// Apparel 상속받은 하의 Apparel
+	// Apparel 상속받은 하의 Bottom
 	//하의를 고를 떄 고려해야하는 부분 선정 예정.
+	public BottomApparel(ApparelKind kind) {
+		super(kind); //this.kind와 동일?
+	}
 	public void getUserInput(Scanner input) {
 		System.out.print("Name: ");
 		String name = input.next();

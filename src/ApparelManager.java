@@ -4,7 +4,6 @@ import java.util.Scanner;
 public class ApparelManager {
 	ArrayList <Apparel> apparels = new ArrayList<Apparel>();
 	Scanner input ;
-	//Scanner input2 = new Scanner(System.in);
 	
 	public Apparel getNumFromList(int index) {
 		return apparels.get(index);
@@ -29,25 +28,25 @@ public class ApparelManager {
 			System.out.print("Select number for Apparel kind: ");
 			kind = input.nextInt();
 			if(kind == 1) {
-				apparel = new Apparel(); //Top
+				apparel = new Apparel(ApparelKind.Top); //Top
 				apparel.getUserInput(input);
 				apparels.add(apparel);
 				break;
 			}
 			else if(kind == 2) {
-				apparel = new OuterApparel();
+				apparel = new OuterApparel(ApparelKind.Outer);
 				apparel.getUserInput(input);
 				apparels.add(apparel);
 				break;
 			}
 			else if(kind == 3) {
-				apparel = new BottomApparel();
+				apparel = new BottomApparel(ApparelKind.Bottom);
 				apparel.getUserInput(input);
 				apparels.add(apparel);
 				break;
 			}
 			else if(kind == 4) {
-				apparel = new AccApparel();
+				apparel = new AccApparel(ApparelKind.Acc);
 				apparel.getUserInput(input);
 				apparels.add(apparel);
 				break;
@@ -64,13 +63,11 @@ public class ApparelManager {
 		int apparelProductNumber= input.nextInt();
 		for(int i = 0; i < apparels.size();i++) {
 			Apparel apparel = apparels.get(i);
-			if(apparel.getProductNumber() == apparelProductNumber) { //왜 menumanager로 넘어가는가 ??????
-				
+			if(apparel.getProductNumber() == apparelProductNumber) {
 				int num = -1;
 				while(num != 7) {
-				//옷 정보에 저장할 정보: 사이즈 종류 코드 
 				System.out.println("1. Edit Name"); 
-				System.out.println("2. Edit Gender");//입력한 옷 정보를 담을 스킬이 없어 생략 아마 상속 혹은 메소듣 이용할 것이라고 예상
+				System.out.println("2. Edit Gender");
 				System.out.println("3. Edit Size");
 				System.out.println("4. Edit ProductNumber");
 				System.out.println("5. Edit Location");
@@ -90,31 +87,40 @@ public class ApparelManager {
 				System.out.print("Type new gender: ");
 				String gender = input.next();
 				 apparel.setGender(gender);
-				 System.out.println("Modified name: "+apparel.getGender());
+				 System.out.println("Modified gender: "+apparel.getGender());
 				 }
 				 else if(num==3){
 				System.out.print("Type new size: ");
 				String size = input.next();
 				apparel.setSize(size);
-				System.out.println("Modified name: "+apparel.getSize());
+				System.out.println("Modified size: "+apparel.getSize());
 				 }
 				 else if(num==4){
 				System.out.print("Type new product number: ");
 				int productNumber = input.nextInt();
-				apparel.setProductNumber(productNumber);
-				System.out.println("Modified name: "+apparel.getProductNumber());
+				
+					for(int j = 0; j < apparels.size();j++) {
+						if(apparels.get(j).productNumber == productNumber) {
+							System.out.println("\n***Product Number is already exist***\n");
+							break;
+						}else {
+							apparel.setProductNumber(productNumber);
+							System.out.println("Modified producr number: "+apparel.getProductNumber());
+						}
+					}
 				 }
+				
 				 else if(num==5){
 				System.out.print("Type new location: ");
 				String location = input.next();
 				apparel.setLocation(location);
-				System.out.println("Modified name: "+apparel.getLocation());
+				System.out.println("Modified location: "+apparel.getLocation());
 				 }
 				 else if(num==6){
 				System.out.print("Type new stock: ");
 				int stock = input.nextInt();
 				apparel.setStock(stock);
-				System.out.println("Modified name: "+apparel.getStock());
+				System.out.println("Modified stock: "+apparel.getStock());
 				 }
 				 else if(num==7) {
 				
@@ -159,6 +165,5 @@ public class ApparelManager {
 			System.out.println("The Apparel has not been registered");
 			System.out.println(" ");
 			}
-	//input.close();	
 	}
 }

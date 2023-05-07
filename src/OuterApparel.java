@@ -1,7 +1,10 @@
 import java.util.Scanner;
 
 public class OuterApparel extends Apparel {
-// Apparel 상속받은 상의 Apparel
+// Apparel 상속받은 상의 Outer
+	public OuterApparel(ApparelKind kind) {
+		super(kind);//this.kind와 동일?
+	}
 	
 	public void getUserInput(Scanner input) {
 	 	
@@ -58,4 +61,31 @@ public class OuterApparel extends Apparel {
 		
 		System.out.println("\n Information is successfully registered \n");
  }
+	
+	public void printInfo() {	 
+		 String skind = "none"; 
+		 switch (this.kind) {
+		 case Top : 
+			 skind = "Top";
+			 break;
+		 case Outer:
+			 skind = "Outer";
+			 break;
+		 case Bottom:
+			 skind = "Bottom";
+			 break;
+		 case Acc:
+			 skind = "Accessory";
+			 break;
+		 default:
+		 }
+		 System.out.println("kind: "+ skind);
+		 System.out.println("name: " + this.name);
+		 System.out.println("size: " + this.size);
+		 System.out.println("gender: " + this.gender);
+		 System.out.println("location: "+ this.location);
+		 System.out.println("productNumber: " + this.productNumber );
+		 System.out.println("Stock: " + this.stock);
+		 System.out.println("Color: " + this.color);
+	 }
 }
