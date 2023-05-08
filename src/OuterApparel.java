@@ -36,6 +36,10 @@ public class OuterApparel extends Apparel {
 		int price = input.nextInt();
 		this.setPrice(price);
 		
+		System.out.print("Season: ");
+		String season= input.next();
+		this.setSeason(season);
+		
 		char answer = 'f';
 		while(answer !='y' && answer !='Y' && answer !='n' && answer !='N') {
 			System.out.print("Is this Unisex apparel? (Y/N): ");
@@ -63,35 +67,8 @@ public class OuterApparel extends Apparel {
 		System.out.println("Stock: "+ stock);
 		System.out.println("Color: "+color);
 		System.out.println("Price: "+price);
-		
+		System.out.println("Season: " + season);
 		System.out.println("\n Information is successfully registered \n");
  }
-	
-	public void printInfo() {	 
-		 String skind = "none"; 
-		 switch (this.kind) {
-		 case Top : 
-			 skind = "Top";
-			 break;
-		 case Outer:
-			 skind = "Outer";
-			 break;
-		 case Bottom:
-			 skind = "Bottom";
-			 break;
-		 case Acc:
-			 skind = "Accessory";
-			 break;
-		 default:
-		 }
-		 System.out.println("kind: "+ skind);
-		 System.out.println("name: " + this.name);
-		 System.out.println("size: " + this.size);
-		 System.out.println("gender: " + this.gender);
-		 System.out.println("location: "+ this.location);
-		 System.out.println("productNumber: " + this.productNumber );
-		 System.out.println("Stock: " + this.stock);
-		 System.out.println("Color: " + this.color);
-		 System.out.println("Price: "+this.price);
-	 }
+
 }

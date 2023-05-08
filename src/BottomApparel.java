@@ -34,6 +34,10 @@ public class BottomApparel extends Apparel {
 		System.out.print("Price: ");
 		int price = input.nextInt();
 		this.setPrice(price);
+		
+		System.out.print("Season: ");
+		String season= input.next();
+		this.setSeason(season);
 
 		char answer = 'f';
 		while(answer !='y' && answer !='Y' && answer !='n' && answer !='Y') {
@@ -62,7 +66,7 @@ public class BottomApparel extends Apparel {
 		System.out.println("Stock: "+ stock);
 		System.out.println("Color: "+color);
 		System.out.println("Price: " + price);
-		
+		System.out.println("Season: " + season);
 		System.out.println("\n Information is successfully registered \n");
 		}
 	}

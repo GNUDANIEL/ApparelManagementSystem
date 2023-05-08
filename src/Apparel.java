@@ -14,6 +14,7 @@ public class Apparel {
 	protected int stock;
 	protected String color;
 	protected int price;
+	protected String season;
 	
 	public Apparel() {}; 
 
@@ -23,8 +24,9 @@ public class Apparel {
 		 this.size = size;
 		 this.color = color;
 	}
+
 	public Apparel(ApparelKind kind, String name, String gender, String size, int productNumber 
-			 		,String location, int stock,String color,int price) {//location 과 productNumber, Stock 할당 이후 정보
+			 		,String location, int stock,String color,int price, String season) {//location 과 productNumber, Stock 할당 이후 정보
 		 this.kind = kind;
 		 this.name = name;
 		 this.gender= gender;
@@ -34,8 +36,9 @@ public class Apparel {
 		 this.stock = stock;
 		 this.color = color;
 		 this.price = price;
+		 this.season = season;
 	 }
-	 
+
 	public Apparel(ApparelKind kind) {
 		this.kind = kind;
 	}
@@ -105,6 +108,13 @@ public class Apparel {
 	public void setPrice(int price) {
 		this.price = price;
 	}
+	public String getSeason() {
+		return season;
+	}
+
+	public void setSeason(String season) {
+		this.season = season;
+	}
 	
 	public void printInfo() {	 
 		String skind = "none"; 
@@ -134,6 +144,7 @@ public class Apparel {
 		 System.out.println("Stock: " + this.stock);
 		 System.out.println("Color: " + this.color);
 		 System.out.println("Price: " + this.price);
+		 System.out.println("Season: " + this.season);
 	 }
 	 
 	 public void getUserInput(Scanner input) {
@@ -160,6 +171,10 @@ public class Apparel {
 			System.out.print("Price: ");
 			int price = input.nextInt();
 			this.setPrice(price);
+			
+			System.out.print("Season: ");
+			String season= input.next();
+			this.setSeason(season);
 			
 			char answerSize = 'f';
 			while(answerSize !='y' && answerSize !='Y' && answerSize !='n' && answerSize !='Y') {
@@ -204,10 +219,11 @@ public class Apparel {
 			System.out.println("Gender: " + gender);
 			System.out.println("Size: "+ size);
 			System.out.println("ProductNumber: " + productNum);
-			System.out.println("Location: " +location);
-			System.out.println("Stock: "+ stock);
-			System.out.println("Color: "+color);
-			System.out.println("Price: "+price);
+			System.out.println("Location: " + location);
+			System.out.println("Stock: " + stock);
+			System.out.println("Color: " + color);
+			System.out.println("Price: " + price);
+			System.out.println("Season: " + season);
 			System.out.println("\n Information is successfully registered \n");
 	 }
 }

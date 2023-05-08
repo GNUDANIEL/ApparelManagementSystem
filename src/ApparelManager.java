@@ -8,9 +8,7 @@ public class ApparelManager {
 	public Apparel getNumFromList(int index) {
 		return apparels.get(index);
 	}
-	
-	ApparelManager(){}
-	
+
 	ApparelManager(Scanner input){
 		this.input =input;
 	}
@@ -46,7 +44,7 @@ public class ApparelManager {
 				break;
 			}
 			else if(kind == 4) {
-				apparel = new AccApparel(ApparelKind.Top);
+				apparel = new AccApparel(ApparelKind.Acc);
 				apparel.getUserInput(input);
 				apparels.add(apparel);
 				break;
