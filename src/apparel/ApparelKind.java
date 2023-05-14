@@ -1,3 +1,4 @@
+package apparel;
 
 public enum ApparelKind {
 	Top,

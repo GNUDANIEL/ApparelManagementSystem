@@ -1,11 +1,20 @@
 import java.util.ArrayList;
+
 import java.util.Scanner;
 
+import apparel.AccApparel;
+import apparel.Apparel;
+import apparel.TopApparel;
+import apparel.ApparelInput;
+import apparel.ApparelKind;
+import apparel.BottomApparel;
+import apparel.OuterApparel;
+
 public class ApparelManager {
-	ArrayList <Apparel> apparels = new ArrayList<Apparel>();
+	ArrayList <ApparelInput> apparels = new ArrayList<ApparelInput>();
 	Scanner input ;
 	
-	public Apparel getNumFromList(int index) {
+	public ApparelInput getNumFromList(int index) {
 		return apparels.get(index);
 	}
 
@@ -15,7 +24,7 @@ public class ApparelManager {
 	
 	public void addApparel() {
 		int kind = 0;
-		Apparel apparel ;
+		ApparelInput apparelInput ;
 		while (kind != 1 && kind != 2) {
 			System.out.println("Add Apparel"); //productNum 겹치는 경우 오류나는 경우
 		
@@ -26,27 +35,27 @@ public class ApparelManager {
 			System.out.print("Select number for Apparel kind: ");
 			kind = input.nextInt();
 			if(kind == 1) {
-				apparel = new Apparel(ApparelKind.Top); //Top
-				apparel.getUserInput(input);
-				apparels.add(apparel);
+				apparelInput = new TopApparel(ApparelKind.Top); //Top
+				apparelInput.getUserInput(input);
+				apparels.add(apparelInput);
 				break;
 			}
 			else if(kind == 2) {
-				apparel = new OuterApparel(ApparelKind.Outer);
-				apparel.getUserInput(input);
-				apparels.add(apparel);
+				apparelInput = new OuterApparel(ApparelKind.Outer);
+				apparelInput.getUserInput(input);
+				apparels.add(apparelInput);
 				break;
 			}
 			else if(kind == 3) {
-				apparel = new BottomApparel(ApparelKind.Bottom);
-				apparel.getUserInput(input);
-				apparels.add(apparel);
+				apparelInput = new BottomApparel(ApparelKind.Bottom);
+				apparelInput.getUserInput(input);
+				apparels.add(apparelInput);
 				break;
 			}
 			else if(kind == 4) {
-				apparel = new AccApparel(ApparelKind.Acc);
-				apparel.getUserInput(input);
-				apparels.add(apparel);
+				apparelInput = new AccApparel(ApparelKind.Acc);
+				apparelInput.getUserInput(input);
+				apparels.add(apparelInput);
 				break;
 			}
 			else {
@@ -60,8 +69,8 @@ public class ApparelManager {
 		System.out.print("Apparel Product code: ");
 		int apparelProductNumber= input.nextInt();
 		for(int i = 0; i < apparels.size();i++) {
-			Apparel apparel = apparels.get(i);
-			if(apparel.getProductNumber() == apparelProductNumber) {
+			ApparelInput apparelInput = apparels.get(i);
+			if(apparelInput.getProductNumber() == apparelProductNumber) {
 				int num = -1;
 				while(num != 7) {
 				System.out.println("1. Edit Name"); 
@@ -78,32 +87,32 @@ public class ApparelManager {
 				 if (num==1){
 				System.out.print("Type new name: ");
 				String name = input.next();
-				 apparel.setName(name);
-				 System.out.println("Modified name: "+apparel.getName());
+				apparelInput.setName(name);
+				 System.out.println("Modified name: "+apparelInput.getName());
 				 }
 				 else if(num==2) {
 				System.out.print("Type new gender: ");
 				String gender = input.next();
-				 apparel.setGender(gender);
-				 System.out.println("Modified gender: "+apparel.getGender());
+				apparelInput.setGender(gender);
+				 System.out.println("Modified gender: "+apparelInput.getGender());
 				 }
 				 else if(num==3){
 				System.out.print("Type new size: ");
 				String size = input.next();
-				apparel.setSize(size);
-				System.out.println("Modified size: "+apparel.getSize());
+				apparelInput.setSize(size);
+				System.out.println("Modified size: "+apparelInput.getSize());
 				 }
 				 else if(num==4){
 				System.out.print("Type new product number: ");
 				int productNumber = input.nextInt();
 				
 					for(int j = 0; j < apparels.size();j++) {
-						if(apparels.get(j).productNumber == productNumber) {
+						if(apparels.get(j).getProductNumber() == productNumber) {
 							System.out.println("\n***Product Number is already exist***\n");
 							break;
 						}else {
-							apparel.setProductNumber(productNumber);
-							System.out.println("Modified producr number: "+apparel.getProductNumber());
+							apparelInput.setProductNumber(productNumber);
+							System.out.println("Modified producr number: "+apparelInput.getProductNumber());
 						}
 					}
 				 }
@@ -111,14 +120,14 @@ public class ApparelManager {
 				 else if(num==5){
 				System.out.print("Type new location: ");
 				String location = input.next();
-				apparel.setLocation(location);
-				System.out.println("Modified location: "+apparel.getLocation());
+				apparelInput.setLocation(location);
+				System.out.println("Modified location: "+apparelInput.getLocation());
 				 }
 				 else if(num==6){
 				System.out.print("Type new stock: ");
 				int stock = input.nextInt();
-				apparel.setStock(stock);
-				System.out.println("Modified stock: "+apparel.getStock());
+				apparelInput.setStock(stock);
+				System.out.println("Modified stock: "+apparelInput.getStock());
 				 }
 				 else if(num==7) {
 				
@@ -147,7 +156,7 @@ public class ApparelManager {
 		int productNum = input.nextInt();
 		int index = -1 ;
 		for(int i = 0; i < apparels.size();i++) {
-			if(apparels.get(i).productNumber == productNum) {
+			if(apparels.get(i).getProductNumber() == productNum) {
 				index = i;
 				System.out.println(" ");
 				break;

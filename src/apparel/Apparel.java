@@ -1,6 +1,7 @@
+package apparel;
 import java.util.Scanner;
 
-public class Apparel {
+public abstract class Apparel { //ㄴstudent라는 객체 생성 x 
 	public ApparelKind getKind() {
 		return kind;
 	}
@@ -116,36 +117,7 @@ public class Apparel {
 		this.season = season;
 	}
 	
-	public void printInfo() {	 
-		String skind = "none"; 
-		switch (this.kind) {
-		case Top : 
-			 skind = "Top";
-			 break;
-		 case Outer:
-			 skind = "Outer";
-			 break;
-		 case Bottom:
-			 skind = "Bottom";
-			 break;
-		 case Acc:
-			 skind = "Accessory";
-			 break;
-		 default:
-			 skind = "none";
-			 break;
-		 }
-		 System.out.println("kind: "+ skind);
-		 System.out.println("name: " + this.name);
-		 System.out.println("size: " + this.size);
-		 System.out.println("gender: " + this.gender);
-		 System.out.println("location: "+ this.location);
-		 System.out.println("productNumber: " + this.productNumber );
-		 System.out.println("Stock: " + this.stock);
-		 System.out.println("Color: " + this.color);
-		 System.out.println("Price: " + this.price);
-		 System.out.println("Season: " + this.season);
-	 }
+	public abstract void printInfo() ;
 	 
 	 public void getUserInput(Scanner input) {
 		 	System.out.print("Name: ");

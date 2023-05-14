@@ -1,6 +1,8 @@
+package apparel;
 import java.util.Scanner;
 
-public class AccApparel extends Apparel {
+
+public class AccApparel extends Apparel implements ApparelInput{
 	// Apparel 상속받은 악세사리 Apparel
 	//항상 unisex 상품이라고 가정
 	//금속 비금속 고려하여 비금속일 경우 목도리 스카프 추가
@@ -25,11 +27,7 @@ public class AccApparel extends Apparel {
 		
 		System.out.print("Stock: ");
 		int stock = input.nextInt();
-		this.setStock(stock);
-		
-//		System.out.print("Color: ");
-//		String color = input.next();
-//		this.setColor(color);
+		this.setStock(stock);;
 		
 		System.out.print("Price: ");
 		int price = input.nextInt();
@@ -92,7 +90,6 @@ public class AccApparel extends Apparel {
 		 System.out.println("location: "+ this.location);
 		 System.out.println("productNumber: " + this.productNumber );
 		 System.out.println("Stock: " + this.stock);
-		 //System.out.println("Color: " + this.color);
 		 System.out.println("Price: "+ this.price);
 	 }
 }
