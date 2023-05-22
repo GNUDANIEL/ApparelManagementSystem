@@ -1,7 +1,7 @@
 package apparel;
 import java.util.Scanner;
 
-public abstract class Apparel { //ㄴstudent라는 객체 생성 x 
+public abstract class Apparel implements ApparelInput{ //ㄴstudent라는 객체 생성 x 
 	public ApparelKind getKind() {
 		return kind;
 	}
@@ -84,7 +84,10 @@ public abstract class Apparel { //ㄴstudent라는 객체 생성 x
 		return size;
 	}
 
-	public void setSize(String size) {
+	public void setSize(String size) throws SizeFormatException{
+		if (size.length() > 2 && size != "Free size" || size.equals("")) {
+			throw new SizeFormatException();
+		}//사이즈는 Xs S M L Xl 총 5가지{
 		this.size = size;
 	}
 
@@ -117,7 +120,30 @@ public abstract class Apparel { //ㄴstudent라는 객체 생성 x
 		this.season = season;
 	}
 	
-	public abstract void printInfo() ;
+	public void setApparelName(Scanner input) {
+		System.out.print("name: ");
+		String name = input.next();
+		this.setName(name);
+		}
+	
+	public void setApparelNumber(Scanner input) {
+		System.out.print("number: ");
+		int number = input.nextInt();
+		this.setProductNumber(number);
+	}
+	
+	public void setApparelSize(Scanner input) {
+		String size = "";
+		while(size.length() > 3 && size != "Free size" || size.equals("")) {
+		System.out.print("size: ");
+		size = input.next();
+		try {
+			this.setSize(size);
+		}catch(SizeFormatException e) {
+			System.out.println("Incorrect Size. Put right size within 2 character");
+		}
+		}
+	}
 	 
 	 public void getUserInput(Scanner input) {
 		 	System.out.print("Name: ");
@@ -153,18 +179,21 @@ public abstract class Apparel { //ㄴstudent라는 객체 생성 x
 				System.out.print("Is this Free size accessory? (Y/N): ");
 				
 				answerSize = input.next().charAt(0);
-				if (answerSize == 'y' || answerSize ==  'Y') {
-					size = "Free size";
-					this.setSize(size);
-					break;
-					}
-					else if (answerSize == 'n' ||answerSize ==  'N') {
-						System.out.print("Size: ");
-						size = input.next();
+					try {
+					if (answerSize == 'y' || answerSize ==  'Y') {
+						size = "Free size";
 						this.setSize(size);
-						break;
 					}
-					else {}
+						else if (answerSize == 'n' ||answerSize ==  'N') {
+							System.out.print("Size: ");
+							size = input.next();
+							this.setSize(size);
+						}
+						else {}
+					}
+					catch(SizeFormatException e) {
+						System.out.println("Incorrect Size. Put right size within 2 character");
+					}
 				}
 			
 			char answer = 'f';
@@ -198,4 +227,38 @@ public abstract class Apparel { //ㄴstudent라는 객체 생성 x
 			System.out.println("Season: " + season);
 			System.out.println("\n Information is successfully registered \n");
 	 }
+	 public void printInfo() {	 
+			String skind = getKindString(); 	
+			System.out.println("kind: "+ skind);
+			System.out.println("name: " + this.name);
+			System.out.println("size: " + this.size);
+			System.out.println("gender: " + this.gender);
+			System.out.println("location: "+ this.location);
+			System.out.println("productNumber: " + this.productNumber );
+			System.out.println("Stock: " + this.stock);
+			System.out.println("Color: " + this.color);
+			System.out.println("Price: " + this.price);
+			System.out.println("Season: " + this.season);
+			}
+				
+			public String getKindString() {
+				String skind = "none"; 
+				switch (this.kind) {
+				case Top : 
+					 skind = "Top";
+					 break;
+				 case Outer:
+					 skind = "Outer";
+					 break;
+				 case Bottom:
+					 skind = "Bottom";
+					 break;
+				 case Acc:
+					 skind = "Accessory";
+					 break;
+				 default:
+					 break;
+				 }
+				return skind;
+			}
 }

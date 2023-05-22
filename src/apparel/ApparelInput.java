@@ -9,7 +9,7 @@ public interface ApparelInput {
 	public int getProductNumber();
 	
 	public String getName();
-	
+	 
 	public void setName(String name);
 
 	public String getGender() ;
@@ -24,11 +24,29 @@ public interface ApparelInput {
 	
 	public String getSize();
 
-	public void setSize(String size);
+	public void setSize(String size) throws SizeFormatException;
 
 	public int getStock() ;
 	
 	public void setStock(int stock) ;
 
-	public void printInfo();
+	//public int getColor() ;
+	
+	public void setColor(String color) ;
+	
+	public void setPrice(int price);
+	
+	public void setSeason(String season) ;
+	
+	public abstract void printInfo();
+	
+	public void setApparelLocation( Scanner input);
+	
+	public void setApparelName(Scanner input);
+	
+	public void setApparelStock(Scanner input);
+	
+	public void setApparelNumber(Scanner input);
+	
+	public void setScanSize(Scanner input);
 }

@@ -8,40 +8,13 @@ public class TopApparel extends Apparel implements ApparelInput {
 		super(kind);//this.kind와 동일?
 	}
 	
-	public void getUserInput(Scanner input) {
-	 	
-		System.out.print("Name: ");
+	public void setApparelName(Scanner input) {
+		System.out.print("name: ");
 		String name = input.next();
 		this.setName(name);
-					
-		System.out.print("Size: ");
-		String size = input.next();
-		this.setSize(size);
-		
-		System.out.print("ProductNumber: ");
-		int productNum = input.nextInt();
-		this.setProductNumber(productNum);
-		
-		System.out.print("Location: ");
-		String location = input.next();
-		this.setLocation(location);
-		
-		System.out.print("Stock: ");
-		int stock = input.nextInt();
-		this.setStock(stock);
-		
-		System.out.print("Color: ");
-		String color = input.next();
-		this.setColor(color);
-		
-		System.out.print("Price: ");
-		int price = input.nextInt();
-		this.setPrice(price);
-		
-		System.out.print("Season: ");
-		String season= input.next();
-		this.setSeason(season);
-		
+		}
+	
+	public void setApparelGender(ApparelInput apparel, Scanner input) {
 		char answer = 'f';
 		while(answer !='y' && answer !='Y' && answer !='n' && answer !='N') {
 			System.out.print("Is this Unisex apparel? (Y/N): ");
@@ -53,18 +26,91 @@ public class TopApparel extends Apparel implements ApparelInput {
 				break;
 				}
 				else if (answer == 'n' ||answer ==  'N') {
-					System.out.print("Gender: ");
-					gender = input.next();
-					this.setGender(gender);
+					setScanGender(input);
 					break;
 				}
 				else {}			
 		}
+	}
+	
+	public void setScanGender(Scanner input) {
+		System.out.print("Gender: ");
+		String gender = input.next();
+		this.setGender(gender);
+	}
+	
+	
+	public void setApparelLocation( Scanner input) {
+		System.out.print("location: ");
+		String location = input.next();
+		this.setLocation(location);
+	}
+
+	public void setApparelStock(Scanner input) {
+		System.out.print("Stock: ");
+		int stock = input.nextInt();
+		this.setStock(stock);
+	}
+
+	public void setScanSize( Scanner input) {
+		System.out.print("size: ");
+		String size = input.next();
+		try {
+			this.setSize(size);
+		} catch (SizeFormatException e) {
+			// TODO Auto-generated catch block
+			System.out.println("Incorrect Size. Put right size within 2 characters");
+		}
+	}
+	
+	public void setApparelNumber(Scanner input) {
+		System.out.print("number: ");
+		int number = input.nextInt();
+		this.setProductNumber(number);
+	}
+	
+	public void setApparelColor(Scanner input) {
+		System.out.print("color: ");
+		String color = input.next();
+		this.setColor(color);
+	}
+	
+	public void setApparelPrice( Scanner input) {
+		System.out.print("Price: ");
+		int price = input.nextInt();
+		this.setPrice(price);
+	}
+	
+	public void setApparelSeason(Scanner input) {
+		System.out.print("Season: ");
+		String season= input.next();
+		this.setSeason(season);
+	}
+	
+	public void getUserInput(Scanner input) {
+	 	
+		setApparelName(input);
+		
+		setApparelGender(this, input);	
+		
+		setApparelSize(input);
+		
+		setApparelNumber(input);
+		
+		setApparelStock(input);	
+		
+		setApparelLocation(input);
+		
+		setApparelColor(input);
+		
+		setApparelPrice(input);
+		
+		setApparelSeason(input);
 		System.out.println("\n --- Check New Apparel Information ---  ");
 		System.out.println("name: "+ name);
 		System.out.println("Gender: " + gender);
 		System.out.println("Size: "+ size);
-		System.out.println("ProductNumber: " + productNum);
+		System.out.println("ProductNumber: " + productNumber);
 		System.out.println("Location: " +location);
 		System.out.println("Stock: "+ stock);
 		System.out.println("Color: "+color);
@@ -91,15 +137,16 @@ public class TopApparel extends Apparel implements ApparelInput {
 			 skind = "none";
 			 break;
 		 }
-		 System.out.println("kind: "+ skind);
-		 System.out.println("name: " + this.name);
-		 System.out.println("size: " + this.size);
-		 System.out.println("gender: " + this.gender);
-		 System.out.println("location: "+ this.location);
-		 System.out.println("productNumber: " + this.productNumber );
+		 System.out.println("Kind: "+ skind);
+		 System.out.println("Name: " + this.name);
+		 System.out.println("Size: " + this.size);
+		 System.out.println("Gender: " + this.gender);
+		 System.out.println("Location: "+ this.location);
+		 System.out.println("ProductNumber: " + this.productNumber );
 		 System.out.println("Stock: " + this.stock);
 		 System.out.println("Color: " + this.color);
 		 System.out.println("Price: " + this.price);
 		 System.out.println("Season: " + this.season);
 	 }
+
 }
