@@ -8,31 +8,6 @@ public class BottomApparel extends Apparel{
 		super(kind); //this.kind와 동일?
 	}
 	
-	@Override
-	public void setApparelLocation(Scanner input) {
-		System.out.print("Location: ");
-		String location = input.next();
-		this.setLocation(location);
-	}
-
-	public void setApparelName(Scanner input) {
-		System.out.print("Name: ");
-		String name = input.next();
-		this.setName(name);
-	}
-	@Override
-	public void setApparelStock(Scanner input) {
-		System.out.print("Stock: ");
-		int stock = input.nextInt();
-		this.setStock(stock);
-	}
-	@Override
-	public void setApparelNumber(Scanner input) {
-		System.out.print("ProductNumber: ");
-		int productNum = input.nextInt();
-		this.setProductNumber(productNum);
-	}
-	@Override
 	public void setScanSize(Scanner input) {
 		System.out.print("Size: ");
 		String size = input.next();
@@ -68,26 +43,16 @@ public class BottomApparel extends Apparel{
 		String gender = input.next();
 		this.setGender(gender);
 	}
-	public void setApparelPrice(Scanner input) {
-		System.out.print("Price: ");
-		int price = input.nextInt();
-		this.setPrice(price);
-	}
-	public void setApparelSeason(Scanner input) {
-		System.out.print("Season: ");
-		String 
-		season= input.next();
-		this.setSeason(season);
-	}
 
 	public void getUserInput(Scanner input) {
 		setApparelName(input);
+		setApparelGender(this, input);
 		setScanSize(input);
 		setApparelNumber(input);
-		setApparelLocation(input);
 		setApparelStock(input);
+		setApparelLocation(input);
+		setApparelColor(input);	
 		setApparelPrice(input);
-		setApparelGender(this, input);
 		setApparelSeason(input);
 		
 		System.out.println("\n --- Check New Apparel Information ---");

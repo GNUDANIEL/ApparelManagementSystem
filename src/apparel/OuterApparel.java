@@ -7,12 +7,6 @@ public class OuterApparel extends Cloth {
 		super(kind);//this.kind와 동일?
 	}
 	
-	public void setApparelName(Scanner input) {
-		System.out.print("name: ");
-		String name = input.next();
-		this.setName(name);
-		}
-	
 	public void setScanSize( Scanner input) {
 		System.out.print("size: ");
 		String size = input.next();

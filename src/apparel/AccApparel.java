@@ -12,35 +12,8 @@ public class AccApparel extends Apparel{
 		super(kind);//this.kind와 동일?
 	}
 	
-	@Override
-	public void setApparelLocation(Scanner input) {
-		System.out.print("Location: ");
-		String location = input.next();
-		this.setLocation(location);
-	}
-
-	public void setApparelName(Scanner input) {
-		System.out.print("Name: ");
-		String name = input.next();
-		this.setName(name);
-	}
-
-	@Override
-	public void setApparelStock(Scanner input) {
-		System.out.print("Stock: ");
-		int stock = input.nextInt();
-		this.setStock(stock);
-	}
-
 	public void setApparelGender() {
 		this.setGender(GENDER);
-	}
-
-	@Override
-	public void setApparelNumber(Scanner input) {
-		System.out.print("ProductNumber: ");
-		int productNum = input.nextInt();
-		this.setProductNumber(productNum);	
 	}
 
 	public void setApparelSize(ApparelInput apparel, Scanner input) {
@@ -76,22 +49,16 @@ public class AccApparel extends Apparel{
 			System.out.println("Incorrect Size. Put right size within 2 character");
 		}
 	}
-	
-	public void setApparelPrice(Scanner input) {
-		System.out.print("Price: ");
-		int price = input.nextInt();
-		this.setPrice(price);	
-	}
-	
+
 	public void getUserInput(Scanner input) { //오버라이딩된 것이므로 이것이 실행되어야함
 
 		setApparelName(input);
+		setApparelGender();
 		setScanSize(input);
 		setApparelNumber(input);
-		setApparelLocation(input);
 		setApparelStock(input);
+		setApparelLocation(input);
 		setApparelPrice(input);
-		setApparelGender();
 		setApparelSize(this, input);
 		
 		System.out.println("\n --- Check New Apparel Information --- ");

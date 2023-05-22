@@ -144,8 +144,35 @@ public abstract class Apparel implements ApparelInput{ //ㄴstudent라는 객체
 		}
 		}
 	}
-	 
-	 public void getUserInput(Scanner input) {
+
+	public void setApparelStock(Scanner input) {
+		System.out.print("Stock: ");
+		int stock = input.nextInt();
+		this.setStock(stock);
+	}
+	public void setApparelLocation(Scanner input) {
+		System.out.print("Location: ");
+		String location = input.next();
+		this.setLocation(location);
+	}
+	public void setApparelColor(Scanner input) {
+		System.out.print("color: ");
+		String color = input.next();
+		this.setColor(color);
+	}
+	public void setApparelPrice(Scanner input) {
+		System.out.print("Price: ");
+		int price = input.nextInt();
+		this.setPrice(price);
+	}
+	
+	public void setApparelSeason(Scanner input) {
+		System.out.print("Season: ");
+		String 
+		season= input.next();
+		this.setSeason(season);
+	}	
+	public void getUserInput(Scanner input) {
 		 	System.out.print("Name: ");
 			String name = input.next();
 			this.setName(name);
@@ -227,7 +254,7 @@ public abstract class Apparel implements ApparelInput{ //ㄴstudent라는 객체
 			System.out.println("Season: " + season);
 			System.out.println("\n Information is successfully registered \n");
 	 }
-	 public void printInfo() {	 
+	public void printInfo() {	 
 			String skind = getKindString(); 	
 			System.out.println("kind: "+ skind);
 			System.out.println("name: " + this.name);

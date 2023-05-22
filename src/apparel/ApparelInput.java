@@ -7,10 +7,6 @@ public interface ApparelInput {
 	public void getUserInput(Scanner input);
 	
 	public int getProductNumber();
-	
-	public String getName();
-	 
-	public void setName(String name);
 
 	public String getGender() ;
 
@@ -29,12 +25,8 @@ public interface ApparelInput {
 	public int getStock() ;
 	
 	public void setStock(int stock) ;
-
-	//public int getColor() ;
 	
 	public void setColor(String color) ;
-	
-	public void setPrice(int price);
 	
 	public void setSeason(String season) ;
 	

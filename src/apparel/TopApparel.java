@@ -7,13 +7,7 @@ public class TopApparel extends Apparel implements ApparelInput {
 	public TopApparel(ApparelKind kind) {
 		super(kind);//this.kind와 동일?
 	}
-	
-	public void setApparelName(Scanner input) {
-		System.out.print("name: ");
-		String name = input.next();
-		this.setName(name);
-		}
-	
+
 	public void setApparelGender(ApparelInput apparel, Scanner input) {
 		char answer = 'f';
 		while(answer !='y' && answer !='Y' && answer !='n' && answer !='N') {
@@ -39,19 +33,6 @@ public class TopApparel extends Apparel implements ApparelInput {
 		this.setGender(gender);
 	}
 	
-	
-	public void setApparelLocation( Scanner input) {
-		System.out.print("location: ");
-		String location = input.next();
-		this.setLocation(location);
-	}
-
-	public void setApparelStock(Scanner input) {
-		System.out.print("Stock: ");
-		int stock = input.nextInt();
-		this.setStock(stock);
-	}
-
 	public void setScanSize( Scanner input) {
 		System.out.print("size: ");
 		String size = input.next();
@@ -63,49 +44,19 @@ public class TopApparel extends Apparel implements ApparelInput {
 		}
 	}
 	
-	public void setApparelNumber(Scanner input) {
-		System.out.print("number: ");
-		int number = input.nextInt();
-		this.setProductNumber(number);
-	}
-	
-	public void setApparelColor(Scanner input) {
-		System.out.print("color: ");
-		String color = input.next();
-		this.setColor(color);
-	}
-	
-	public void setApparelPrice( Scanner input) {
-		System.out.print("Price: ");
-		int price = input.nextInt();
-		this.setPrice(price);
-	}
-	
-	public void setApparelSeason(Scanner input) {
-		System.out.print("Season: ");
-		String season= input.next();
-		this.setSeason(season);
-	}
-	
+
 	public void getUserInput(Scanner input) {
 	 	
 		setApparelName(input);
-		
 		setApparelGender(this, input);	
-		
-		setApparelSize(input);
-		
-		setApparelNumber(input);
-		
+		setApparelSize(input);	
+		setApparelNumber(input);		
 		setApparelStock(input);	
-		
-		setApparelLocation(input);
-		
-		setApparelColor(input);
-		
-		setApparelPrice(input);
-		
+		setApparelLocation(input);		
+		setApparelColor(input);		
+		setApparelPrice(input);		
 		setApparelSeason(input);
+		
 		System.out.println("\n --- Check New Apparel Information ---  ");
 		System.out.println("name: "+ name);
 		System.out.println("Gender: " + gender);
