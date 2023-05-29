@@ -1,7 +1,13 @@
 package apparel;
+import java.io.Serializable;
 import java.util.Scanner;
 
-public abstract class Apparel implements ApparelInput{ //ㄴstudent라는 객체 생성 x 
+public abstract class Apparel implements ApparelInput, Serializable{ /**
+	 * 
+	 */
+	private static final long serialVersionUID = 4631960973436223981L;
+
+//ㄴstudent라는 객체 생성 x 
 	public ApparelKind getKind() {
 		return kind;
 	}

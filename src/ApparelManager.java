@@ -1,9 +1,8 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-
 import apparel.AccApparel;
-import apparel.Apparel;
 import apparel.TopApparel;
 import apparel.ApparelInput;
 import apparel.ApparelKind;
@@ -11,9 +10,15 @@ import apparel.BottomApparel;
 import apparel.OuterApparel;
 import apparel.SizeFormatException;
 
-public class ApparelManager {
+public class ApparelManager implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8716050015860082229L;
+	
 	ArrayList <ApparelInput> apparels = new ArrayList<ApparelInput>();
-	Scanner input ;
+	transient Scanner input;
 	
 	public ApparelInput getNumFromList(int index) {
 		return apparels.get(index);

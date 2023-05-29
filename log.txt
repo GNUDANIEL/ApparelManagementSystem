@@ -1,0 +1,8 @@
+5월 29, 2023 5:30:18 오후 log.EventLogger log
+정보: Add an apparel
+5월 29, 2023 5:30:19 오후 log.EventLogger log
+정보: Show an info of apparel
+5월 29, 2023 5:30:25 오후 log.EventLogger log
+정보: System is finished 
+5월 29, 2023 5:30:33 오후 log.EventLogger log
+정보: System is finished 
