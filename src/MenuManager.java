@@ -9,22 +9,18 @@ import java.util.Scanner;
 import log.EventLogger;
 
 public class MenuManager {		
-	
-	static EventLogger logger = new EventLogger("log.txt");
-	
-	public static void main(String[] args) {
-		
+	static EventLogger logger = new EventLogger("log.txt");	
+	public static void main(String[] args) {	
 		Scanner input = new Scanner(System.in);
 		ApparelManager apparelManager = getObject("apparelManager.ser");
 		if(apparelManager == null) {
 			apparelManager = new ApparelManager(input);
 		}//apparelManager가 NULL일 경우 객체가 없는 경우 제거-> 직렬화??
-		//new ApparelManager(input);
+		//new ApparelManager(input); 보류
 		selectMenu(input, apparelManager);
-		showMenu();
+		// showMenu();
 		putObject(apparelManager, "apparelManager.ser");
-	}
-		
+	}	
 	
 	public static void showMenu() {
 		System.out.println("##### Apparel Manager System Menu #####");
@@ -35,11 +31,11 @@ public class MenuManager {
 		System.out.println("5. Exit");
 		System.out.print("Select a number between 1-5: ");
 	}
+	
 	public static void selectMenu(Scanner input, ApparelManager apparelManager) {
 		int num = -1;
-		while(num != 4) {
+		while(num != 5) {
 			try {
-		
 			showMenu();
 			num = input.nextInt();
 			switch(num) {
@@ -77,18 +73,16 @@ public class MenuManager {
 			}
 		}
 	}
+	
 	public static ApparelManager getObject(String fileName) {
 		ApparelManager apparelManager = null;
 		FileInputStream file;
 		try {
 			file = new FileInputStream(fileName);
-			ObjectInputStream in = new ObjectInputStream(file);
-			
+			ObjectInputStream in = new ObjectInputStream(file);		
 			apparelManager = (ApparelManager)in.readObject();
 			in.close();
-			file.close();
-			
-			
+			file.close();		
 		} catch (FileNotFoundException e) {
 			return apparelManager; //
 		} catch (IOException e) {
@@ -100,16 +94,14 @@ public class MenuManager {
 		}
 		return apparelManager;
 	}
+	
 	public static void putObject(ApparelManager apparelManager, String fileName) {
-
 		try {
 			FileOutputStream file = new FileOutputStream(fileName);
 			ObjectOutputStream out = new ObjectOutputStream(file);
-			
 			out.writeObject(apparelManager);
 			out.close();
-			file.close();
-			
+			file.close();			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

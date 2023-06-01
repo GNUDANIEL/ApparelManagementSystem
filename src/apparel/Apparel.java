@@ -2,12 +2,13 @@ package apparel;
 import java.io.Serializable;
 import java.util.Scanner;
 
-public abstract class Apparel implements ApparelInput, Serializable{ /**
+public abstract class Apparel implements ApparelInput, Serializable{ 
+	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 4631960973436223981L;
 
-//ㄴstudent라는 객체 생성 x 
+	//student라는 객체 생성 x 
 	public ApparelKind getKind() {
 		return kind;
 	}
@@ -15,13 +16,13 @@ public abstract class Apparel implements ApparelInput, Serializable{ /**
 	protected ApparelKind kind = ApparelKind.Top;
 	protected String name;//ex)windbreaker
 	protected String gender; // M FM UniSex
-	protected int productNumber ;
-	protected String location;
+	protected int productNumber; //1 ~ 100
+	protected String location; //Men's Top , Women's Bottom, Accessory
 	protected String size; //S,M,L
-	protected int stock;
-	protected String color;
+	protected int stock; // 1~ 100
+	protected String color; 
 	protected int price;
-	protected String season;
+	protected String season; // SS, FW
 	
 	public Apparel() {}; 
 
@@ -174,8 +175,7 @@ public abstract class Apparel implements ApparelInput, Serializable{ /**
 	
 	public void setApparelSeason(Scanner input) {
 		System.out.print("Season: ");
-		String 
-		season= input.next();
+		String season= input.next();
 		this.setSeason(season);
 	}	
 	public void getUserInput(Scanner input) {
