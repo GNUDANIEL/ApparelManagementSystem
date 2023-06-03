@@ -82,22 +82,14 @@ public class OuterApparel extends Cloth {
 	
 public void getUserInput(Scanner input) {
 	 	
-		setApparelName(input);
-		
-		setApparelGender(this, input);	
-		
+		setApparelName(input);		
+		setApparelGender(this, input);			
 		setApparelSize(input);
-		
 		setApparelNumber(input);
-		
 		setApparelStock(input);	
-		
 		setApparelLocation( input);
-		
 		setApparelColor(input);
-		
 		setApparelPrice(input);
-		
 		setApparelSeason(input);		
 		
 		System.out.println("\n --- Check New Apparel Information ---  ");

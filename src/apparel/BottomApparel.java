@@ -49,8 +49,8 @@ public class BottomApparel extends Apparel{
 		setApparelGender(this, input);
 		setScanSize(input);
 		setApparelNumber(input);
-		setApparelStock(input);
 		setApparelLocation(input);
+		setApparelStock(input);
 		setApparelColor(input);	
 		setApparelPrice(input);
 		setApparelSeason(input);
