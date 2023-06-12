@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public interface ApparelInput {	
 	public void getUserInput(Scanner input);
+	public String getName();
 	public int getProductNumber();
 	public String getGender() ;
 	public void setGender(String gender);

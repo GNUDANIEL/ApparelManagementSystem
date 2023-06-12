@@ -1,8 +1,10 @@
+package manager;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import apparel.AccApparel;
+import apparel.Apparel;
 import apparel.TopApparel;
 import apparel.ApparelInput;
 import apparel.ApparelKind;
@@ -121,6 +123,7 @@ public class ApparelManager implements Serializable{
 			}
 		}
 	}
+	
 	public void infoOfApparel() {
 		//의복정보 불러 온 다음사이즈 및 개수 각각 원하는 거만 출력할 수 있도록 할 것
 		if( apparels.size() == 0) {
@@ -174,6 +177,7 @@ public class ApparelManager implements Serializable{
 		apparel.setGender(gender);
 		 System.out.println("Modified gender: "+apparel.getGender());
 	}
+	
 	public void setApparelSize(ApparelInput apparel, Scanner input) {
 		System.out.print("Type new size: ");
 		String size = input.next();
@@ -185,6 +189,7 @@ public class ApparelManager implements Serializable{
 		}
 		System.out.println("Modified size: "+apparel.getSize());
 	}
+	
 	public void setApparelNumber(ApparelInput apparel, Scanner input) {
 		System.out.print("Type new product number: ");
 		int productNumber = input.nextInt();
@@ -209,5 +214,13 @@ public class ApparelManager implements Serializable{
 		System.out.println("6. Edit Stock");
 		System.out.println("7. Exit");
 		System.out.println("Select number between 1-7: ");
+	}
+	
+	public int size() {
+		return apparels.size();
+	}
+	
+	public ApparelInput get (int index) {
+		return (Apparel)apparels. get (index);
 	}
 }

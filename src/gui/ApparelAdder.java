@@ -7,8 +7,10 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 
-public class ApparelAdder extends JFrame{
-	public ApparelAdder() {
+public class ApparelAdder extends JPanel{
+	WindowFrame frame ;
+	public ApparelAdder(WindowFrame frame) {
+		this.frame = frame;
 		//for Top
 		JPanel panel = new JPanel();
 		panel.setLayout(new SpringLayout());
@@ -71,9 +73,8 @@ public class ApparelAdder extends JFrame{
 		panel.add(new JButton("Cancel"));
 		SpringUtilities.makeCompactGrid(panel,10,2,6,6,6,6);
 		
-		this.setSize(300,300);
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setContentPane(panel);
+
+		this.add(panel);
 		this.setVisible(true);
 	}
 }

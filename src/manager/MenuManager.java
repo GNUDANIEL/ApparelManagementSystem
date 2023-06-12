@@ -1,3 +1,4 @@
+package manager;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -6,17 +7,22 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
+import gui.WindowFrame;
 import log.EventLogger;
 
 public class MenuManager {		
 	static EventLogger logger = new EventLogger("log.txt");	
+	
 	public static void main(String[] args) {	
+		
 		Scanner input = new Scanner(System.in);
 		ApparelManager apparelManager = getObject("apparelManager.ser");
 		if(apparelManager == null) {
 			apparelManager = new ApparelManager(input);
 		}//apparelManager가 NULL일 경우 객체가 없는 경우 제거-> 직렬화??
 		//new ApparelManager(input); 보류
+		WindowFrame frame = new WindowFrame(apparelManager );
 		selectMenu(input, apparelManager);
 		// showMenu();
 		putObject(apparelManager, "apparelManager.ser");
